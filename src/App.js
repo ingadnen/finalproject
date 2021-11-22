@@ -6,6 +6,8 @@ import Login from './components/Login';
 import Home from './components/Home';
 import Header from './components/Header';
 import { getUserAuth } from './actions';
+import Chats from "./components/Chats";
+import { AuthProvider } from "./contexts/AuthContext";
 
 function App(props) {
     useEffect(() => {
@@ -15,6 +17,7 @@ function App(props) {
     return (
         <div className="App">
             <Router>
+
                 <Switch>
                     <Route exact path="/">
                         <Login />
@@ -23,7 +26,15 @@ function App(props) {
                         <Header />
                         <Home />
                     </Route>
+                    <AuthProvider>
+                    <Route path="/chats">
+                        <Header />
+
+                        <Chats />
+                    </Route>
+                    </AuthProvider>
                 </Switch>
+
             </Router>
         </div>
     );

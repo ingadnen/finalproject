@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { signOutAPI } from '../actions';
+import { Redirect } from 'react-router-dom';
 
 const Header = (props) => {
     return (
@@ -22,7 +23,7 @@ const Header = (props) => {
                 <Nav>
                     <NavListWrap>
                         <NavList className="active">
-                            <a>
+                            <a href="/home">
                                 <img src="/images/nav-home.svg" alt="" />
                                 <span>Home</span>
                             </a>
@@ -37,9 +38,10 @@ const Header = (props) => {
 
 
 
-                        <NavList>
-                            <a>
-                                <img src="/images/nav-messaging.svg" alt="" />
+                        <NavList >
+                            <a href="/chats" >
+
+                                <img  src="/images/nav-messaging.svg" alt="" />
                                 <span>Messaging</span>
                             </a>
                         </NavList>

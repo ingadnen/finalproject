@@ -4,11 +4,17 @@ import PostModal from './PostModal';
 import ReactPlayer from 'react-player';
 import { connect } from 'react-redux';
 import { getArticlesAPI } from '../actions';
+import db from "../firebase";
+
 
 const Main = (props) => {
     const [showModal, setShowModal] = useState("close");
 
-    useEffect(() => {
+
+
+
+
+              useEffect(() => {
         props.getArticles()
     }, []);
 

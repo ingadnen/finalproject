@@ -1,4 +1,7 @@
-# Getting Started with Create React App
+# Check out the hosted website with firebase
+
+#Hosting URL: https://projectsgomycode.web.app
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

@@ -80,6 +80,7 @@ export function postArticleAPI(payload) {
                         video: payload.video,
                         sharedImg: downloadURL,
                         comments: 0,
+                        like: 0,
                         description: payload.description,
                     });
                     dispatch(setLoading(false));
@@ -96,6 +97,7 @@ export function postArticleAPI(payload) {
                 video: payload.video,
                 sharedImg: '',
                 comments: 0,
+                like: 0,
                 description: payload.description,
             });
             dispatch(setLoading(false));

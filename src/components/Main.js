@@ -7,11 +7,18 @@ import { getArticlesAPI } from '../actions';
 import db from "../firebase";
 
 
+
+
 const Main = (props) => {
     const [showModal, setShowModal] = useState("close");
+   const likes = props.articles.map((article, key)=>{return <div key = {key}><span>{article.like}</span></div>})
+    const [like, setLike] = useState(likes);
+    const [isliked, setIsLiked] = useState(false);
 
-
-
+    const likeHandler = () => {
+        setLike(isliked ? like-1 : like +1)
+        setIsLiked(!isliked)
+    }
 
 
               useEffect(() => {
@@ -125,13 +132,15 @@ const Main = (props) => {
                                     <SocialCounts>
                                         <li>
                                             <button>
-                                                <img src="images/like-icon.png" alt="" />
-                                                <img src="images/clap-icon.png" alt="" />
-                                                <span>62</span>
+                                                <img src="images/like-icon.png"  onClick={likeHandler}alt="" />
+
+                                                <span>  {like}people like it</span>
                                             </button>
                                         </li>
                                         <li>
-                                            <a>{article.comments} comments</a>
+
+                                            <img src="/images/comment-icon.png" alt="" />
+                                            <a>  {article.comments} comments</a>
                                         </li>
                                     </SocialCounts>
 
